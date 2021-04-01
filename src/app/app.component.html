@@ -1,0 +1,63 @@
+<!--    <lion-form>-->
+<form (ngSubmit)="debug($event)">
+  <lion-fieldset>
+    <lion-input name="first_name" [(ngModel)]="first_name" label="First Name" required></lion-input>
+    <lion-input name="last_name" [(ngModel)]="last_name" label="Last Name" required></lion-input>
+  </lion-fieldset>
+  <lion-input-date name="date" [(ngModel)]="date" label="Date of application" required></lion-input-date>
+  <lion-input-datepicker name="datepicker" [(ngModel)]="datepicker" label="Date to be picked" required>
+  </lion-input-datepicker>
+  <lion-textarea name="bio" [(ngModel)]="bio" label="Biography" required [minlength]="10"
+    help-text="Please enter at least 10 characters"></lion-textarea>
+  <lion-input-amount name="money" [(ngModel)]="money" label="Money"></lion-input-amount>
+  <lion-input-iban name="iban" [(ngModel)]="iban" label="Iban"></lion-input-iban>
+  <lion-input-email name="email" [(ngModel)]="email" label="Email"></lion-input-email>
+  <lion-checkbox-group label="What do you like?" name="checkers" [(ngModel)]="checkers" required>
+    <lion-checkbox [choiceValue]="'foo'" label="I like foo"></lion-checkbox>
+    <lion-checkbox [choiceValue]="'bar'" label="I like bar"></lion-checkbox>
+    <lion-checkbox [choiceValue]="'baz'" label="I like baz"></lion-checkbox>
+  </lion-checkbox-group>
+  <lion-radio-group name="dinosaurs" [(ngModel)]="dinosaurs" label="Favorite dinosaur" required>
+    <lion-radio [choiceValue]="'allosaurus'" label="allosaurus"></lion-radio>
+    <lion-radio [choiceValue]="'brontosaurus'" label="brontosaurus"></lion-radio>
+    <lion-radio [choiceValue]="'diplodocus'" label="diplodocus"></lion-radio>
+  </lion-radio-group>
+  <lion-listbox name="favoriteFruit" [(ngModel)]="favoriteFruit" label="Favorite fruit">
+    <lion-option [choiceValue]="'Apple'">Apple</lion-option>
+    <lion-option checked [choiceValue]="'Banana'">Banana</lion-option>
+    <lion-option [choiceValue]="'Mango'">Mango</lion-option>
+  </lion-listbox>
+  <lion-combobox required name="favoriteMovie" [(ngModel)]="favoriteMovie" label="Favorite movie" autocomplete="both">
+    <lion-option checked [choiceValue]="'Rocky'">Rocky</lion-option>
+    <lion-option [choiceValue]="'Rocky II'">Rocky II</lion-option>
+    <lion-option [choiceValue]="'Rocky III'">Rocky III</lion-option>
+    <lion-option [choiceValue]="'Rocky IV'">Rocky IV</lion-option>
+    <lion-option [choiceValue]="'Rocky V'">Rocky V</lion-option>
+    <lion-option [choiceValue]="'Rocky Balboa'">Rocky Balboa</lion-option>
+  </lion-combobox>
+  <lion-select-rich name="favoriteColor" [(ngModel)]="favoriteColor" label="Favorite color">
+    <lion-option [choiceValue]="'red'">Red</lion-option>
+    <lion-option [choiceValue]="'hotpink'" checked>Hotpink</lion-option>
+    <lion-option [choiceValue]="'teal'">Teal</lion-option>
+  </lion-select-rich>
+  <lion-select-rich name="lyrics" [(ngModel)]="lyrics" label="Lyrics">
+    <lion-option [choiceValue]="'1'">Fire up that loud</lion-option>
+    <lion-option [choiceValue]="'2'">Another round of shots...</lion-option>
+    <lion-option [choiceValue]="'3'">Drop down for what?</lion-option>
+  </lion-select-rich>
+  <lion-input-range name="range" [(ngModel)]="range" min="1" max="5" unit="%" step="0.1" label="Input range">
+  </lion-input-range>
+  <lion-checkbox-group multiple-choice="false" name="terms" [(ngModel)]="terms" required>
+    <lion-checkbox label="I blindly accept all terms and conditions"></lion-checkbox>
+  </lion-checkbox-group>
+  <lion-switch name="notifications" [(ngModel)]="notifications" label="Notifications"></lion-switch>
+  <lion-input-stepper max="5" min="0" name="rsvp" [(ngModel)]="rsvp">
+    <label slot="label">RSVP</label>
+    <div slot="help-text">Max. 5 guests</div>
+  </lion-input-stepper>
+  <lion-textarea name="comments" [(ngModel)]="comments" label="Comments"></lion-textarea>
+  <div class="buttons">
+    <lion-button raised>Submit</lion-button>
+  </div>
+</form>
+<!--    </lion-form>-->
